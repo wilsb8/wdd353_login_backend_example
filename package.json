@@ -1,0 +1,34 @@
+{
+  "name": "wdd353_login_backend_example",
+  "version": "1.0.0",
+  "description": "NodeJS Login Back-End Example",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilsb8/wdd353_login_backend_example.git"
+  },
+  "keywords": [
+    "Restful",
+    "API",
+    "NodeJS"
+  ],
+  "author": "William A Ferguson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wilsb8/wdd353_login_backend_example/issues"
+  },
+  "homepage": "https://github.com/wilsb8/wdd353_login_backend_example#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
