@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const postLogin = require("../../db/db");
+const postLogin = require('../../db/db');
 
 router.get("/", () => {
   res.status(200).json({
