@@ -7,6 +7,9 @@ require('dotenv').config();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+app.use("/", router); // this goes above the middleware. i might want to remember that
+                      // next time.
+                      
 // handle CORS
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -17,11 +20,11 @@ app.use((req, res, next) => {
     next();
 });
 
-// error handling 
+// error handling bad urls
 app.use((req, res, next) => {
     const error = new Error('Not found!!!');
     error.status = 404;
-    next(error)
+    next(error);
 });
 
 app.use((error, req, res, next) => {
@@ -33,9 +36,6 @@ app.use((error, req, res, next) => {
     });
 });
 
-app.use("/", router);
-
-// connect database
 mongoose.connect(process.env.db_url, (err) => {
     if (err) {
       console.error("Error", err.message);
@@ -43,5 +43,12 @@ mongoose.connect(process.env.db_url, (err) => {
       console.log("MongoDB connected successfully.");
     }
 });
+
+
+
+
+
+// connect database
+
 
 module.exports = app;
