@@ -3,6 +3,7 @@ const router = express.Router();
 const postLogin = require('../../db/db');
 
 router.get("/", () => {
+  console.log("/ here");
   res.status(200).json({
     message: "Server is up.",
     method: req.method,
