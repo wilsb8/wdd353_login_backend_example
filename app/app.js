@@ -8,8 +8,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use("/", router); // this goes above the middleware. i might want to remember that
-                      // next time.
-                      
+                      // next time, kind of seems important.
+
 // handle CORS
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
